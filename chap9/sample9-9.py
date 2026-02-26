@@ -1,0 +1,22 @@
+class Student:
+    def __init__(self,name,gender):
+        self.name=name
+        self.__gender=gender
+
+    @property
+    def gender(self):
+        return self.__gender
+
+    @gender.setter
+    def gender(self,value):
+        if value!='男' and value!='女':
+            print('性别有误，已将性别默认设置为男')
+            self.__gender='男'
+        else:
+            self.__gender=value
+
+stu=Student('陈梅梅','女')
+print(stu.name,'的性别是：',stu.gender)
+# stu.gender='男'
+stu.gender='其他'
+print(stu.name,'的性别是',stu.gender)
